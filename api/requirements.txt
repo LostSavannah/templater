@@ -1,0 +1,7 @@
+uvicorn
+fastapi
+jinja2
+pdfkit
+htmldocx
+docx
+mako

@@ -1,0 +1,7 @@
+__pycache__
+build.bat
+run.bat
+.pytest_cache
+dist
+*.egg-info
+node_modules

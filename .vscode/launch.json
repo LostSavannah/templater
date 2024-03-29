@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./api/main.py",
+            "console": "integratedTerminal",
+            "env": {
+                "TEMPLATER_HOSTNAME": "0.0.0.0",
+                "TEMPLATER_PORT": "45775",
+                "TEMPLATER_DATABASE": "C:\\projects\\personal\\templater\\api\\database.db",
+                "TEMPLATER_STATIC": "C:\\projects\\personal\\templater\\api\\static"
+            }
+        }
+    ]
+}
