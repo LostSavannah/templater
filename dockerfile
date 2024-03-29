@@ -1,8 +1,18 @@
+FROM ubuntu:latest as configuration
+
+WORKDIR /config
+
+ARG BASE_URL=http://localhost:45775
+
+RUN echo VITE_API_URL=${BASE_URL} > .env
+
+
 FROM node:latest as build
 
 WORKDIR /src
 
 COPY ./frontend .
+COPY --from=configuration /config .
 
 RUN npm i
 RUN npm run build

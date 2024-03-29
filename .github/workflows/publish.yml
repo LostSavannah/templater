@@ -18,8 +18,9 @@ jobs:
       
       - name: Build new image
         run: |
-          docker build -t templater .
+          docker build -t templater --build-arg BASE_URL=https://test.moradev.dev/apps/templater .
 
       - name: Start new container
+        if: always()
         run: |
           docker run -d --rm --name templater -p 45775:45775 templater

@@ -1,6 +1,8 @@
+
+const baseUrl: string = import.meta.env.VITE_API_URL;
 export default class BaseHttpService{
     
-    protected baseUrl:string = "http://localhost:45775";
+    protected baseUrl:string = baseUrl;
 
     protected async get<TResult>(url:string):Promise<TResult>{
         return new Promise<TResult>((resolve, reject) => {
