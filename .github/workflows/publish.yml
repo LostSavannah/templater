@@ -3,6 +3,8 @@ name: Publish
 on:
   push:
     branches: [ "master" ]
+  schedule:
+      - cron: "0 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -11,16 +13,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Stop old container
-        run: |
-          docker stop templater || true
       
       - name: Build new image
         run: |
           docker build -t templater --build-arg BASE_URL=https://test.moradev.dev/apps/templater .
 
-      - name: Start new container
+      - name: Restart container
         if: always()
         run: |
-          docker run -d --rm --name templater -p 45775:45775 templater
+          docker stop templater || true
+          docker rm templater || true
+          docker run -d --restart unless-stopped --name templater -p 45775:45775 templater
