@@ -41,6 +41,9 @@ export default function MainLayout() {
             },
         }
   return (<>
+    <div className="w-100 h4 bg-dark p-3 text-light">
+        <span className="p-3">Templater</span>
+    </div>
     <div className="container vw-100 vh-100">
     <div className="row h-100">
         <div className="col-4 h-100 bg-success">
