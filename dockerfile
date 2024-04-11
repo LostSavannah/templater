@@ -18,14 +18,9 @@ RUN npm i
 RUN npm run build
 
 
-FROM ubuntu:latest
+FROM python:latest
 
 WORKDIR /app
-
-RUN apt-get update
-RUN apt-get install -y python3.10 python3-pip
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y wkhtmltopdf
 
 COPY ./api/requirements.txt .
 RUN pip3 install -r ./requirements.txt

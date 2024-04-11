@@ -1,7 +1,8 @@
 uvicorn
 fastapi
 jinja2
-pdfkit
+#pdfkit
+xhtml2pdf
 htmldocx
 docx
 mako
